@@ -1,0 +1,108 @@
+.cartitems {
+    margin: 30px 50px;
+}
+
+.cartitems hr {
+    height: 3px;
+    background: black;
+    border: 0;
+}
+
+.cartitems-format-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Make the columns responsive */
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0px;
+    color: grey;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cartitems-format {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.carticon-product-icon {
+    height: 62px;
+}
+
+.cartitems-remove-icon {
+    width: 15px;
+    margin: 0px 20px; /* Reduce margin for smaller screens */
+    cursor: pointer;
+}
+
+.cartitems-quantity {
+    width: 64px;
+    height: 50px;
+    border: 2px solid white;
+    color: white;
+    background: black;
+}
+
+.cartitems-down {
+    display: flex;
+    flex-direction: column; /* Stack items in a column for smaller screens */
+    margin: 20px 0px; /* Adjust margin for smaller screens */
+}
+
+.cartitems-total {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* Adjust margin for smaller screens */
+    gap: 20px; /* Adjust gap for smaller screens */
+}
+
+.cartitems-total-item {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+
+.cartitems-total button {
+    width: 100%; /* Make the button width 100% for responsiveness */
+    height: 48px;
+    outline: none;
+    background: #ad0303;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.cartitems-total button:hover{
+    color:#ad0303;
+    background:white;
+}
+
+@media screen and (max-width: 1280px) {
+    .cartitems {
+        margin: 20px 30px;
+    }
+    .cartitems-remove-icon {
+        margin: 0px 10px; /* Reduce margin for smaller screens */
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .cartitems-total {
+        margin-right: 10px; /* Adjust margin for smaller screens */
+        gap: 10px; /* Adjust gap for smaller screens */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cartitems-total-item {
+        flex-direction: column; /* Stack items in a column for smaller screens */
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cartitems-remove-icon {
+        margin: 0px 5px; /* Reduce margin for smaller screens */
+    }
+}

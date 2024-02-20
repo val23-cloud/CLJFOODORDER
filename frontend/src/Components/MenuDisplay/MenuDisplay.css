@@ -1,0 +1,169 @@
+.menudisplay {
+    display: flex;
+    margin: 0px 170px;
+}
+
+.menudisplay-left {
+    display: flex;
+    gap: 17px;
+}
+
+.menudisplay-img-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.menudisplay-img-list img {
+    height: 300px;
+}
+
+.menudisplay-main-img {
+    width: 350px; /* Make the main image width 100% for responsiveness */
+    height: auto; /* Automatically adjust the height based on the width */
+    max-width: 450px; /* Set a maximum width for larger screens */
+}
+
+.menudisplay-right {
+    margin: 0px 70px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.menudisplay-right h1 {
+    color: black;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.menudisplay-right-stars {
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    gap: 5px;
+    color: black;
+    font-size: 16px;
+}
+
+.menudisplay-right-prices {
+    display: flex;
+    margin: 40px 0px;
+    gap: 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.menudisplay-right-price-old {
+    color: grey;
+    text-decoration: line-through;
+}
+
+.menudisplay-right-price-new {
+    color: #b50d18;
+}
+
+.menudisplay-right-size h1 {
+    margin-top: 55px;
+    color: grey;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.menudisplay-right-sizes {
+    display: flex;
+    margin: 30px 0px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow sizes to wrap on smaller screens */
+}
+
+.menudisplay-right-sizes div {
+    padding: 7px 20px;
+    background: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.menudisplay-right-sizes div:hover {
+    color: black;
+    background: #c70a0a;
+}
+
+.menudisplay-right button {
+    padding: 20px 40px;
+    width: 100%; /* Make the button width 100% for responsiveness */
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+    background: #c70a0a;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.menudisplay-right button:hover {
+    color: white;
+    background: black;
+}
+
+.menudisplay-right-category {
+    margin-top: 10px;
+}
+
+.menudisplay-right-category span {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1280px) {
+    .menudisplay {
+        margin: 0px 100px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .menudisplay {
+        flex-direction: column; /* Stack items in a column for smaller screens */
+        align-items: center;
+    }
+    .menudisplay-left,
+    .menudisplay-right {
+        margin: 0; /* Remove margin for smaller screens */
+    }
+    .menudisplay-main-img {
+        max-width: 100%; /* Set maximum width for smaller screens */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .menudisplay {
+        margin: 0px 20px;
+    }
+    .menudisplay-right {
+        margin: 0;
+    }
+    .menudisplay-right-prices,
+    .menudisplay-right-sizes {
+        flex-direction: column; /* Stack prices and sizes in a column for smaller screens */
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .menudisplay {
+        margin: 0px 10px;
+    }
+    .menudisplay-left,
+    .menudisplay-right {
+        margin: 0;
+    }
+    .menudisplay-main-img {
+        max-width: 100%; /* Set maximum width for smaller screens */
+    }
+    .menudisplay-right h1 {
+        font-size: 30px; /* Adjust heading font size for smaller screens */
+    }
+}

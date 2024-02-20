@@ -1,0 +1,396 @@
+import p1_img from "./d.jpg";
+import p2_img from "./nc2.jpg";
+import p3_img from "./nc3.jpg";
+import p4_img from "./nc1.jpg";
+import p5_img from "./nc5.jpg";
+import p6_img from "./nc6.jpg";
+import p7_img from "./nc7.jpg";
+import p8_img from "./nc4.jpeg";
+import p9_img from "./d1.jpg";
+import p10_img from "./d2.jpg";
+import p11_img from "./d8.jpg";
+import p12_img from "./d5.jpg";
+import p13_img from "./d4.jpg";
+import p14_img from "./d3.jpg";
+import p15_img from "./b1.png";
+import p16_img from "./b2.jpg";
+import p17_img from "./b3.jpg";
+import p18_img from "./b4.jpg";
+import p19_img from "./b5.jpg";
+import p20_img from "./d26.webp";
+import p21_img from "./b6.jpg";
+import p22_img from "./b7.jpg";
+import p23_img from "./b8.jpg";
+import p24_img from "./b9.jpeg";
+import p25_img from "./b10.jpg";
+import p26_img from "./b12.webp";
+import p27_img from "./b16.webp";
+import p28_img from "./nc8.jpg";
+import p29_img from "./b14.jpg";
+import p30_img from "./b15.jpg";
+import p31_img from "./b17.jpg";
+import p32_img from "./b18.jpg";
+import p33_img from "./b19.jpg";
+import p34_img from "./b20.jpg";
+import p35_img from "./b21.jpg";
+import p36_img from "./b22.jpg";
+
+let all_product = [
+  {
+    id: 1,
+    name: "Appam",
+    category: "breakfast",
+    image: p1_img,
+    new_price: 25.0,
+    old_price: 30.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 2,
+    name: "Banana Leaf Meal",
+    category:"nonveg",
+    image: p6_img,
+    new_price: 55.0,
+    old_price: 70.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 3,
+    name: "parotta",
+    category: "breakfast",
+    image: p10_img,
+    new_price: 15.0,
+    old_price: 20.0,
+    height:300,
+    width:200,
+  },
+  {
+    id: 4,
+    name: "Puttu",
+    category: "breakfast",
+    image: p9_img,
+    new_price: 25.0,
+    old_price: 40.0,
+  },
+  {
+    id: 5,
+    name: "Chapathi",
+    category: "breakfast",
+    image: p11_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 6,
+    name: "Masala Dosa",
+    category: "breakfast",
+    image: p12_img,
+    new_price: 35.0,
+    old_price: 45.5,
+  },
+  {
+    id: 7,
+    name: "Plain dosa",
+    category: "breakfast",
+    image: p13_img,
+    new_price: 20.0,
+    old_price: 30.0,
+    height:300,
+    width:200,
+  },
+  {
+    id: 8,
+    name: "Kerala Red Rice",
+    category:"veg",
+    image: p8_img,
+    new_price: 30.0,
+    old_price: 50.0,
+    height:300,
+    width:200,
+  },
+  {
+    id: 9,
+    name: "Paneer Butter Masala",
+    category: "veg",
+    image: p20_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 10,
+    name: "Gobi Manchurian",
+    category: "veg",
+    image: p21_img,
+    new_price: 75.0,
+    old_price: 100.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 11,
+    name: "Vegetable kurma",
+    category: "veg",
+    image: p22_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 12,
+    name: "Food Thali",
+    category:"nonveg",
+    image: p4_img,
+    new_price: 120.0,
+    old_price: 150.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 13,
+    name: "Vegetable Fried Rice",
+    category: "veg",
+    image: p23_img,
+    new_price: 70.0,
+    old_price: 90.0,
+    height:300,
+    width:200,
+  },
+  {
+    id: 14,
+    name: "Cabbage Thoran",
+    category:"veg",
+    image: p3_img,
+    new_price: 60.0,
+    old_price: 85.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 15,
+    name: "Olan",
+    category:"veg",
+    image: p5_img,
+    new_price: 50.0,
+    old_price: 80.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 16,
+    name: "Wheat Parotta",
+    category: "breakfast",
+    image: p14_img,
+    new_price: 10.0,
+    old_price: 20.5,
+
+  },
+  {
+    id: 17,
+    name: "Kerala Pineapple Pulissery",
+    category:"veg",
+    image: p7_img,
+    new_price: 60.0,
+    old_price: 100.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 18,
+    name: "Idli",
+    category: "breakfast",
+    image: p17_img,
+    new_price: 30.0,
+    old_price: 40.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 19,
+    name: "Idi Appam",
+    category: "breakfast",
+    image: p15_img,
+    new_price: 35.0,
+    old_price: 40.0,
+    height:300,
+    width:200,
+  },
+  {
+    id: 20,
+    name: "Palampuri",
+    category: "breakfast",
+    image: p16_img,
+    new_price: 20.0,
+    old_price: 30.0,
+    height:300,
+    width:200,
+  },
+  {
+    id: 21,
+    name: "Elayada",
+    category: "breakfast",
+    image: p18_img,
+    new_price: 40.0,
+    old_price: 60.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 22,
+    name: "Neer Dosa",
+    category: "breakfast",
+    image: p19_img,
+    new_price: 10.0,
+    old_price: 15.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 23,
+    name: "Paneer Chilli",
+    category: "veg",
+    image: p24_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 24,
+    name: "Mushroom Masala",
+    category:"veg",
+    image: p25_img,
+    new_price: 75.0,
+    old_price: 100.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 25,
+    name: "Mutter Paneer",
+    category: "veg",
+    image: p26_img,
+    new_price: 65.0,
+    old_price: 90.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 26,
+    name: "Beef Chilli",
+    category: "nonveg",
+    image: p27_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 27,
+    name: "Chicken Butter Masala",
+    category: "nonveg",
+    image: p29_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 28,
+    name: "Kerala Payasum",
+    category:"veg",
+    image: p28_img,
+    new_price: 65.0,
+    old_price: 75.0,
+    height:300,
+    width:200,
+  },
+  {
+    id: 29,
+    name: "Beef Fry",
+    category: "nonveg",
+    image: p30_img,
+    new_price: 75.0,
+    old_price: 100.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 30,
+    name: "Pepper Chicken",
+    category: "nonveg",
+    image: p31_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 31,
+    name: "Egg Roast",
+    category: "nonveg",
+    image: p32_img,
+    new_price: 65.0,
+    old_price: 80.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 32,
+    name: "Fish Fry",
+    category: "nonveg",
+    image: p33_img,
+    new_price: 90.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 33,
+    name: "Chicken Fried Rice",
+    category: "nonveg",
+    image: p34_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 34,
+    name: "Chicken Biryani",
+    category: "nonveg",
+    image: p35_img,
+    new_price: 95.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 35,
+    name: "Special Fish Curry",
+    category:"nonveg",
+    image: p2_img,
+    new_price: 99.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+  {
+    id: 36,
+    name: "Chicken Chettinadu",
+    category: "nonveg",
+    image: p36_img,
+    new_price: 85.0,
+    old_price: 120.5,
+    height:300,
+    width:200,
+  },
+];
+
+export default all_product;

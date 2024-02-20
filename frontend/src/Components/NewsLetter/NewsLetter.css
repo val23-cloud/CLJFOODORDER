@@ -1,0 +1,153 @@
+/* Original styles */
+
+.newsletter {
+    width: 65%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0px 140px;
+    margin-top: 950px;
+    margin-bottom: 150px;
+    background: linear-gradient(180deg, #d91125, black 80%);
+    gap: 30px;
+}
+
+.newsletter h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.newsletter p {
+    color: white;
+    font-size: 20px;
+}
+
+.newsletter div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1919;
+    width: 560px;
+    height: 70px;
+    border-radius: 80px;
+    border: 1px solid black;
+}
+
+.newsletter input {
+    width: 400px;
+    margin-left: 30px;
+    border: none;
+    outline: none;
+    color: grey;
+    font-family: Poppins;
+    font-size: 16px;
+}
+
+.newsletter div button {
+    width: 170px;
+    height: 60px;
+    border-radius: 80px;
+    background: #910412;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.newsletter div button:hover {
+    color: white;
+    background: grey;
+}
+
+/* Responsive styles for max-width: 768px */
+
+@media only screen and (max-width: 768px) {
+    .newsletter {
+        width: 80%;
+        padding: 0px 20px;
+    }
+
+    .newsletter h1 {
+        font-size: 30px;
+    }
+
+    .newsletter p {
+        font-size: 18px;
+    }
+
+    .newsletter div {
+        width: 100%;
+    }
+
+    .newsletter input {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .newsletter div button {
+        width: 100%;
+    }
+}
+
+/* Responsive styles for max-width: 480px */
+
+@media only screen and (max-width: 480px) {
+    .newsletter {
+        width: 90%;
+        padding: 0px 10px;
+    }
+
+    .newsletter h1 {
+        font-size: 25px;
+    }
+
+    .newsletter p {
+        font-size: 16px;
+    }
+
+    .newsletter div {
+        width: 100%;
+    }
+
+    .newsletter input {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .newsletter div button {
+        width: 100%;
+    }
+}
+
+/* Responsive styles for max-width: 365px */
+
+@media only screen and (max-width: 365px) {
+    .newsletter {
+        width: 95%;
+        padding: 0px 5px;
+    }
+
+    .newsletter h1 {
+        font-size: 20px;
+    }
+
+    .newsletter p {
+        font-size: 14px;
+    }
+
+    .newsletter div {
+        width: 100%;
+    }
+
+    .newsletter input {
+        width: 100%;
+        margin-left: 5px;
+    }
+
+    .newsletter div button {
+        width: 100%;
+    }
+}

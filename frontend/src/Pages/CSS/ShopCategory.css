@@ -1,0 +1,72 @@
+.shopcategory-banner {
+    display: block;
+    margin: 0 auto; /* Centering the element horizontally */
+    width: 100%;
+}
+
+.shopcategory-indexSort {
+    display: flex;
+    flex-wrap: wrap; /* Allowing items to wrap to the next line on small screens */
+    margin: 10px 20px; /* Adjusted margin for responsiveness */
+    justify-content: center; /* Centering items on small screens */
+    align-items: center;
+}
+
+.shopcategory-sort {
+    padding: 10px 15px; /* Adjusted padding for responsiveness */
+    border-radius: 40px;
+    border: 1px solid black;
+    margin: 5px; /* Adjusted margin for responsiveness */
+}
+
+.shopcategory-indexSort p span {
+    font-weight: 600;
+}
+
+.shopcategory-products {
+    margin: 20px 10px; /* Adjusted margin for responsiveness */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Displaying one column on small screens */
+    row-gap: 40px; /* Adjusted row-gap for responsiveness */
+}
+
+.shopcategory-products > div {
+    margin-bottom: 20px; /* Adding space between grid items */
+}
+
+.shopcategory-loadmore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto; /* Adjusted margin for responsiveness */
+    width: 80%; /* Making the button take up 80% of the container's width */
+    max-width: 300px; /* Setting a maximum width for the button */
+    height: 69px;
+    border-radius: 75px;
+    background: black;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Responsive styles for max-width: 768px */
+@media only screen and (max-width: 768px) {
+    .shopcategory-sort {
+        padding: 10px 10px;
+    }
+
+    .shopcategory-products {
+        grid-template-columns: 1fr 1fr; /* Displaying two columns on medium screens */
+    }
+}
+
+/* Responsive styles for max-width: 480px */
+@media only screen and (max-width: 480px) {
+    .shopcategory-sort {
+        padding: 20px 30px;
+    }
+
+    .shopcategory-products {
+        grid-template-columns: 1fr; /* Displaying one column on small screens */
+    }
+}
