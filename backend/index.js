@@ -27,6 +27,7 @@ app.post('/create-checkout-session', async(req, res) => {
             },
             unit_amount: Math.round(menu.new_price * 100)
         },
+        
         quantity: menu.count
     }))
 
@@ -34,13 +35,99 @@ app.post('/create-checkout-session', async(req, res) => {
         payment_method_types: ["card"],
         line_items: lineItems,
         mode: "payment",
-        success_url: "http://localhost:3000/payment-success",
-        cancel_url: "http://localhost:3000/payment-failure",
-
+        success_url: "http://localhost:4000/payment-success?session_id={CHECKOUT_SESSION_ID}",
+        cancel_url: "http://localhost:4000/payment-failure?session_id={CHECKOUT_SESSION_ID}",
+        phone_number_collection: {
+            enabled: true,
+          },
+          shipping_address_collection: {
+            allowed_countries: ['IN', 'US'],
+          },
+        
     })
-
+    console.log(session)
     res.json({id: session.id})
+    
 })
+
+
+
+
+
+
+app.get('/payment-data', async (req, res) => {
+
+    try {
+      const session = await stripe.checkout.sessions.retrieve(req?.query?.session_id)
+      console.log(session)
+      res.json({session: session})
+    }
+    catch(e) {
+      // console.error(e)
+      res.status(404).send(`${e}`)
+    }
+    
+    
+    })
+  
+  app.all('/payment-success', async (req, res) => {
+  
+    try {
+      const session = await stripe.checkout.sessions.retrieve(req?.query?.session_id)
+      console.log(session)
+    }
+    catch(e) {
+      console.error(e)
+    }
+    console.log(req.query)
+    // res.json({query: req.query})
+  
+    res.redirect(`http://localhost:3000/payment-success?session_id=${encodeURI(req?.query?.session_id)}`)
+    // const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+    
+    
+    // const customer = await stripe.customers.retrieve(session?.customer);
+  
+    // res.send(`<html><body><h1>Thanks for your order, ${customer?.name}!</h1></body></html>`);
+  });
+  
+  app.all('/payment-failure', (req, res) => {
+    console.log(req.body)
+    res.status(200).json(req.body)
+  })
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -73,7 +73,7 @@ const CartItems = () => {
 <div className="cartitems-down">
     <div className="cartitems-total">
         <h1>Cart Total</h1>
-        {JSON.stringify(cartItems)}
+        {/* {JSON.stringify(cartItems)} */}
         <div>
             <div className="cartitems-total-item">
                 <p>Sub Total</p>
