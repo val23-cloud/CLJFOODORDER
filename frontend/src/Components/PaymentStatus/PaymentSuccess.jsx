@@ -89,26 +89,11 @@ export default function PaymentSuccess() {
                         <span className="close" onClick={closeModal}>&times;</span>
                         <h2>Payment Successful!</h2>
                         <p>Thank you for your purchase.</p>
-                       
+                        <DataFetcher />
                     </div>
                 </div>
             )}
-            <div className="payment-success-message">
-    <p>Payment was successful!
-        <DataFetcher /> </p>
-    <p>Your order is confirmed and will be delivered shortly.</p>
-    
-    <p>Your order details:</p>
-    <ul>
-        <li></li>
-        <li>Product 2: $29.99</li>
-       
-    </ul>
-
-    <p>Thank you for choosing our services!</p>
-    <button className="view-orders-button">Track Order</button>
-   
-</div>
+            
         </>
     );
 }
