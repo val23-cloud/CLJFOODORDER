@@ -106,3 +106,31 @@
         margin: 0px 5px; /* Reduce margin for smaller screens */
     }
 }
+.cartitems-quantity-container {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .cartitems-quantity-btn {
+    font-size: 1rem;
+    padding: 0.3rem;
+    margin: 0.2rem;
+    background-color: black;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cartitems-quantity-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .cartitems-quantity {
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+  }

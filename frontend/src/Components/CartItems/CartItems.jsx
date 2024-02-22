@@ -42,7 +42,7 @@ const CartItems = () => {
         }
     }
 
-    const {getTotalCartAmount,all_product,cartItems,removeFromCart}= useContext(ShopContext);
+    const {getTotalCartAmount,all_product,cartItems,removeFromCart,addToCart}= useContext(ShopContext);
   return (
     <div className='cartitems'>
 <div className="cartitems-format-main">
@@ -61,7 +61,11 @@ const CartItems = () => {
                 <img src={e.image} alt="" className='carticon-product-icon' />
                 <p>{e.name}</p>
                 <p>Rs.{e.new_price}</p>
-                <button className='cartitems-quantity'>{cartItems[e.id]}</button>
+                <div className='cartitems-quantity-container'>
+                        <button className='cartitems-quantity-btn' onClick={() => { removeFromCart(e.id) }}>-</button>
+                        <span className='cartitems-quantity'>{cartItems[e.id]}</span>
+                        <button className='cartitems-quantity-btn' onClick={() => { addToCart(e.id) }}>+</button>
+                    </div>
                 <p>Rs.{e.new_price*cartItems[e.id]}</p>
                 <img className='cartitems-remove-icon' src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt="" />
             </div>
@@ -73,7 +77,7 @@ const CartItems = () => {
 <div className="cartitems-down">
     <div className="cartitems-total">
         <h1>Cart Total</h1>
-        {JSON.stringify(cartItems)}
+        
         <div>
             <div className="cartitems-total-item">
                 <p>Sub Total</p>
