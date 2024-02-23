@@ -70,7 +70,7 @@
 
 .hero-right img {
     width: 700px; /* Adjust the initial width as needed */
-    animation: rotateImage 10s linear infinite; /* Adjust the duration and other properties as needed */
+    animation: rotateImage 85s linear infinite; /* Adjust the duration and other properties as needed */
 }
 
 

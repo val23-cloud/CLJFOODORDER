@@ -17,9 +17,11 @@ const Footer = () => {
         </div>
         <ul className='footer-links'>
             
-            <li>Menu</li>
-            <li>About</li>
-            <li>Contact</li>
+        <li><Link to='/' style={{ textDecoration: 'none',color:'white' }}>Home</Link></li>
+        <li><Link to='/breakfast' style={{ textDecoration: 'none',color:'white' }}>Breakfast</Link></li>
+        <li><Link to='/veg' style={{ textDecoration: 'none',color:'white' }}>Veg</Link></li>
+        <li><Link to='/nonveg' style={{ textDecoration: 'none',color:'white' }}>Non-veg</Link></li>
+        <li><Link to='/contact' style={{ textDecoration: 'none',color:'white' }}>Contact</Link></li>
         </ul>
         <div className="footer-social-icons">
             <div className="footer-icons-container">

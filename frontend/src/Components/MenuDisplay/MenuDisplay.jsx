@@ -45,7 +45,7 @@ const MenuDisplay = (props) => {
     </div>
 </div>
 <button onClick={()=>{addToCart(menu.id)}}>ADD TO CART</button>
-<p className='menudisplay-right-category'><span>Category: </span>Breakfast</p>
+
 
         </div>
     </div>

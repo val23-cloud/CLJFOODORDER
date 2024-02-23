@@ -53,7 +53,7 @@ function DataFetcher() {
         <div>
             {/* <h1>Data:</h1>
             <pre>{JSON.stringify(data, null, 2)}</pre> */}
-            Shipping to <br />
+            Deliverying food to <br />
             {data?.session?.customer_details?.name}, <br />
             {data?.session?.customer_details?.address?.line1}, <br />
             {data?.session?.customer_details?.address?.line2}, <br />
