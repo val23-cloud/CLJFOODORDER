@@ -23,6 +23,16 @@ const Footer = () => {
         <li><Link to='/nonveg' style={{ textDecoration: 'none',color:'white' }}>Non-veg</Link></li>
         <li><Link to='/contact' style={{ textDecoration: 'none',color:'white' }}>Contact</Link></li>
         </ul>
+        <div>
+            <p>Nithin Benny</p>
+            <h3>Hotel Anna
+            </h3>
+            <h5>Near CWRDM,Kottamparamba,Kozhikode-8</h5>
+            <h6>Contact:
+                9605197051
+                7012997146
+            </h6>
+        </div>
         <div className="footer-social-icons">
             <div className="footer-icons-container">
                 <img src={instagram_icon} alt=''/>
