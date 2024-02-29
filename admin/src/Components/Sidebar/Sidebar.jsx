@@ -19,6 +19,12 @@ const Sidebar = () => {
                 <p style={{ textDecoration: 'none', color: 'white' }}>Menu List</p>
             </div>
         </Link>
+        <Link to={'/viewfeedback'} style={{textDecoration:"none"}}>
+            <div className="sidebar-item">
+                <img src={list_menu} alt="" />
+                <p style={{ textDecoration: 'none', color: 'white' }}>View Feedback</p>
+            </div>
+        </Link>
     </div>
   )
 }

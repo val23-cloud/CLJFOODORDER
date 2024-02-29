@@ -1,0 +1,90 @@
+.feedback {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #940311,#bd081a);
+    animation: fadeIn 0.5s ease-in-out, slideIn 0.5s ease-in-out;
+}
+.feedback h2 {
+    color: black; /* Change the color of the h2 element to black */
+}
+.input-container {
+    display: flex;
+    flex-direction: column;  /* Updated to column layout for better alignment */
+    gap: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    border-color: #FF6B6B; /* Highlight border color on focus */
+}
+
+.rating-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;  /* Center stars vertically */
+}
+
+span {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+span.active {
+    color: gold;
+}
+
+.comment-container {
+    margin: 10px 0;
+}
+
+textarea {
+    resize: vertical;  /* Allow vertical resizing of textarea */
+}
+
+button {
+    background: linear-gradient(to right, #000000, black);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: white;
+    color:black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

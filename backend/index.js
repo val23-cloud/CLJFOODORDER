@@ -379,6 +379,70 @@ app.post('/getcart',fetchUser,async (req,res)=>{
     res.json(userData.cartData);
 })
 
+const feedback = new mongoose.Schema({
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    rating: {
+      type: Number,
+      required: true,
+    },
+    comment: {
+      type: String,
+      required: true,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+  });
+  
+  const Feedback = mongoose.model("Feedback", feedback);
+  
+  // API creation
+  app.post('/submit-feedback', async (req, res) => {
+    try {
+      const { name, email, rating, comment } = req.body;
+  
+      // Validate data (you may want to add more validation)
+      if (!name || !email || !rating || !comment) {
+        return res.status(400).json({ success: false, error: 'All fields are required' });
+      }
+  
+      // Create a new Feedback instance
+      const newFeedback = new Feedback({
+        name,
+        email,
+        rating,
+        comment,
+      });
+  
+      // Save feedback to the database
+      await newFeedback.save();
+  
+      res.json({ success: true, message: 'Feedback submitted successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
+    }
+  });
+  // Add this code in your index.js file
+app.get('/allfeedback', async (req, res) => {
+    try {
+      const feedbackData = await Feedback.find().sort({ createdAt: -1 });
+      res.json(feedbackData);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
+    }
+  });
+  
+
 app.listen(port,(error)=>{
 if(!error){
     console.log("Server running on port "+port)

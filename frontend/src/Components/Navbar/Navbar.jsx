@@ -28,9 +28,11 @@ const Navbar = () => {
         <img className='nav-dropdown' onClick={dropdown_toggle} src={nav_dropdown} alt="" height={40} width={40}  />
         <ul ref={menuRef} className="nav-menu">
             <li onClick={()=>{setMenu("home")}}><Link className='link' style={{textDecoration:'none'}} to='/'>Home</Link>{menu==="home"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("about")}}><Link className='link' style={{textDecoration:'none'}} to='/about'>About</Link>{menu==="about"?<hr/>:<></>}</li>
             <li onClick={()=>{setMenu("breakfast")}}><Link className='link' style={{textDecoration:'none'}} to='/breakfast'>Breakfast</Link>{menu==="breakfast"?<hr/>:<></>}</li>
             <li onClick={()=>{setMenu("veg")}}><Link className='link' style={{textDecoration:'none'}} to='/veg'>Veg</Link>{menu==="veg"?<hr/>:<></>}</li>
             <li onClick={()=>{setMenu("non-veg")}}><Link className='link' style={{textDecoration:'none'}} to='/nonveg'>Non-veg</Link>{menu==="non-veg"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("feedback")}}><Link className='link' style={{textDecoration:'none'}} to='/feedback'>Feedback</Link>{menu==="feedback"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login-cart">
             {localStorage.getItem('auth-token')
