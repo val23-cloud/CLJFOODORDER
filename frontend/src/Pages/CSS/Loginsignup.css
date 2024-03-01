@@ -1,6 +1,6 @@
 .loginsignup {
     width: 100%;
-    height: 100vh; /* Using 100vh for full viewport height */
+    height: 130vh; /* Using 100vh for full viewport height */
     background: #a30818;
     padding: 50px; /* Adjusted padding for responsiveness */
     box-sizing: border-box; /* Include padding in width and height calculations */
@@ -14,7 +14,8 @@
     color: white;
     margin: 0 auto; /* Centering the container horizontally */
     padding: 40px 30px; /* Adjusted padding for responsiveness */
-    box-sizing: border-box; /* Include padding in width and height calculations */
+    box-sizing: border-box;
+  /* Include padding in width and height calculations */
 }
 
 .loginsignup-container h1 {

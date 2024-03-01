@@ -6,6 +6,8 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const bcrypt = require('bcryptjs');
+const validator = require('validator');
 const { log } = require("console");
 require("dotenv").config()
 
@@ -97,38 +99,6 @@ app.get('/payment-data', async (req, res) => {
   })
   
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Database connection with mongodb
@@ -268,58 +238,107 @@ const Users=mongoose.model('Users',{
 })
 
 //Creating Endpoint for registering the user
-app.post('/signup',async (req,res)=>{
-   
-    let check = await Users.findOne({email:req.body.email});
-    if(check){
-        return res.status(400).json({success:false,errors:"existing user found with same email address"})
+app.post('/signup', async (req, res) => {
+    const { username, email, password } = req.body;
+
+    // Check if any required field is empty
+    if (!username || !email || !password) {
+        return res.status(400).json({ success: false, errors: "All fields are required" });
     }
+
+    // Validate email format
+    if (!validator.isEmail(email)) {
+        return res.status(400).json({ success: false, errors: "Invalid email format" });
+    }
+
+    // Validate name (only allow letters)
+    if (!validator.isAlpha(username.replace(/\s/g, ''))) {
+        return res.status(400).json({ success: false, errors: "Name can only contain letters" });
+    }
+
+    // Validate password strength
+    if (password.length < 8 || !validator.isStrongPassword(password)) {
+        return res.status(400).json({
+            success: false,
+            errors: "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+        });
+    }
+
+    // Check if the email already exists
+    let check = await Users.findOne({ email });
+    if (check) {
+        return res.status(400).json({ success: false, errors: "Existing user found with the same email address" });
+    }
+
+    // Encrypt the password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create a new user with the validated and encrypted data
     let cart = {};
     for (let i = 0; i < 300; i++) {
-       cart[i]=0; 
+        cart[i] = 0;
     }
-    const user = new Users({
-        name:req.body.username,
-        email:req.body.email,
-        password:req.body.password,
-        cartData:cart,
-    })
 
+    const user = new Users({
+        name: username,
+        email,
+        password: hashedPassword,
+        cartData: cart,
+    });
+
+    // Save the user to the database
     await user.save();
 
+    // Generate JWT token
     const data = {
-        user:{
-            id:user.id
+        user: {
+            id: user.id
         }
     }
 
-    const token = jwt.sign(data,'secret_ecom');
-    res.json({success:true,token})
-})
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({ success: true, token });
+});
 
-//creating endpoint for user login
 
-app.post('/login',async (req,res)=>{
-    let user = await Users.findOne({email:req.body.email});
-    if(user){
-        const passCompare = req.body.password === user.password;
+
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    // Check if any required field is empty
+    if (!email || !password) {
+        return res.status(400).json({ success: false, errors: "All fields are required" });
+    }
+
+    // Validate email format
+    if (!validator.isEmail(email)) {
+        return res.status(400).json({ success: false, errors: "Invalid email format" });
+    }
+
+    let user = await Users.findOne({ email });
+
+    if (user) {
+        const passCompare = await bcrypt.compare(password, user.password);
+
         if (passCompare) {
             const data = {
-                user:{
-                    id:user.id
+                user: {
+                    id: user.id
                 }
             }
-            const token = jwt.sign(data,'secret_ecom');
-            res.json({success:true,token});
+
+            const token = jwt.sign(data, 'secret_ecom');
+            res.json({ success: true, token });
+        } else {
+            res.status(401).json({ success: false, errors: "Wrong Password" });
         }
-        else{
-            res.json({success:false,errors:"Wrong Password"})
-        }
+    } else {
+        res.status(404).json({ success: false, errors: "Email not registered" });
     }
-    else{
-        res.json({success:false,errors:"Wrong Email Id"})
-    }
-})
+});
+
+
 
 //craeting endpoint for newcollection data
 app.get('/newcollections',async (req,res)=>{
