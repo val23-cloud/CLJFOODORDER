@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
-import './PaymentSuccess.css'; // Import your CSS file for styling
+import React, { useState, useEffect } from "react";
+import './PaymentSuccess.css';
+import { useNavigate } from 'react-router-dom';
+ // Import your CSS file for styling
 
 function DataFetcher() {
     const [data, setData] = useState(null);
@@ -76,9 +78,12 @@ function DataFetcher() {
 
 export default function PaymentSuccess() {
     const [modalVisible, setModalVisible] = useState(true);
+    const navigate = useNavigate();
 
     const closeModal = () => {
         setModalVisible(false);
+        // Redirect to the /orderstatus page when the modal is closed
+        navigate('/orderstatus');
     };
 
     return (

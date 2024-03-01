@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useState,useContext } from 'react'
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
 import { loadStripe } from '@stripe/stripe-js'
+import { Link } from 'react-router-dom';
 
 const CartItems = () => {
+    const [showLogin, setShowLogin] = useState(false);
     const makePayment = async() => {
+        const isAuthenticated = localStorage.getItem('auth-token') !== null;
+        if (isAuthenticated) {
         const stripe_publishable_key =  process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
         console.log(stripe_publishable_key)
 
@@ -40,7 +44,12 @@ const CartItems = () => {
         if(result.error) {
             console.log(result.error)
         }
+    }else{
+        setShowLogin(true);
     }
+}
+
+
 
     const {getTotalCartAmount,all_product,cartItems,removeFromCart,addToCart}= useContext(ShopContext);
   return (
@@ -97,6 +106,17 @@ const CartItems = () => {
         <button onClick={makePayment} style={{background: "green"}}>PROCEED TO CHECKOUT</button>
     </div>
 </div>
+ {/* Render Login Modal or Redirect to Login Page */}
+ {showLogin && (
+        /* Use a modal or a separate page for login */
+        <div className="login-modal">
+          <h2>Please log in to proceed to checkout</h2>
+          {/* Render your login form or use a Link to navigate to the login page */}
+          <Link to="/login">
+            <button onClick={() => setShowLogin(false)}>Go to Login Page</button>
+          </Link>
+        </div>
+      )}
     </div>
   )
 }

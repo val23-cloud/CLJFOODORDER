@@ -15,6 +15,7 @@ import kid_banner from './Components/Assets/banner14.png'
 import PaymentFailure from "./Components/PaymentStatus/PaymentFailure";
 import PaymentSuccess from "./Components/PaymentStatus/PaymentSuccess";
 import Feedbackpage from './Pages/Feedbackpage';
+import Orderstatus from './Components/Orderstatus/Orderstatus';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path='/payment-success' element={<PaymentSuccess />} />
           <Route path='/payment-failure' element={<PaymentFailure />} />
           <Route path='/feedback' element={<Feedbackpage />} />
+          <Route path='/orderstatus' element={<Orderstatus />} />
       </Routes>
       <Footer/>
       </BrowserRouter>
